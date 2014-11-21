@@ -8,4 +8,9 @@
 .Rdata
 
 # RStudio files
+.Rproj.user
 .Rproj.user/
+
+## Data Folder
+UCI HAR Dataset/
+data/

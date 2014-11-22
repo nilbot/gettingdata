@@ -11,7 +11,7 @@ This is the repo of course project for the "Getting and Cleaning Data". In this 
 
 ### About the source of the data
 
- One of the most exciting areas in all of data science right now is wearable computing - see for example this [article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/) . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. 
+ One of the most exciting areas in all of data science right now is wearable computing - see for example this [article](http://www.insideactivitytracking.com/data-science-activity-tracking-and-the-battle-for-the-worlds-top-sports-brand/) . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone.
 
 ### Obtaining the data
 
@@ -20,28 +20,29 @@ This is the repo of course project for the "Getting and Cleaning Data". In this 
 
 ## Script
 
-The script that I wrote to produce the tidy data that we need has the following major steps: 
+The script that I wrote to produce the tidy data that we need has the following major steps:
  - Getting Data
-   - In this step I would use the link provided in the previous section to download the data into the working directory. And then I would extract it
-
-   - Further, I would read the data from those data files into R environment. 
-
  - Cleaning Data
-   - First I would merge the test and training sets first
-
-   - Further, I would extract a subset of the data to reflect only the measurements on the mean and std (standard deviation)
-
-   - I would name the subset with activity names
  - Preparing Tidy Data
-   - 
+   - Merge, extract columns, match rows and replace with strings, combine columns and melt + cast
+
+Details please see the source code comments. I have made extensive comments to what I did and why I did it.
+
+Another note regarding the data transformation: all variables that are used in-between steps during the data processing is named and commented. If you would like to inspect the variables in the browser, simply copy the entire code without out-most bracket and paste them into interactive console.
 
 ### Execution of the script
 
-The script is defined as a function accepting no arguments (**TODO** in future I might add ability for user to switch *on* and *off* the download mechanism, should the data is manually downloaded before hand.) To Execute the script, Run
+The script is defined as a function accepting no arguments. The script has a download mechanism: if you did not manually put the zip data in the working directory (repo root directory), the script will start to download the zip data itself and unpack into the root directory.
+
+To Execute the script, Run
 ```
 source("run_analysis.R")
 run()
 ```
+
+It will both create a txt file containing the tidy data, as well as return the tidy data itself.
+
+
 ## The Tidy Data
 
 Please see the [CodeBook](CodeBook.md)

@@ -14,3 +14,7 @@
 ## Data Folder
 UCI HAR Dataset/
 data/
+*.zip
+
+# result
+tidydata.txt
